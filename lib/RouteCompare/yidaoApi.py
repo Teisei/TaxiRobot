@@ -8,6 +8,7 @@ from  config import config
 
 import re
 
+
 def get_price(from_lat, from_lon, to_lat, to_lon):
     yidao = config['yidao']
     # print yidao['headers']
@@ -22,14 +23,14 @@ def get_price(from_lat, from_lon, to_lat, to_lon):
     # print params
     ret = requests.get(yidao['url'], params=params, headers=yidao['headers']).json()
     # print ret
-    print ret
+    # print ret
     return {
         'single_price': ret['result']['total_fee'],
         'pool_price': -1,
         'distance': ret['result'][u'公里费'] / ret['result'][u'公里单价'],
-        'duration': int(re.findall(r"\d+",ret['time_length_detail'])[0])*60,
+        'duration': int(re.findall(r"\d+", ret['time_length_detail'])[0]) * 60,
         'name': 'yidao',
-        'wait_time':-1
+        'wait_time': -1
     }
 
 

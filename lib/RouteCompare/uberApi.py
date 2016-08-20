@@ -27,7 +27,7 @@ class Uber(Dache):
 
     def price(self):
         ret = requests.get(self.config['url_price'], params=self.params, headers=self.config['headers']).json()
-        print 'get price'
+        # print 'get price'
         return {
             'single_price': (ret['prices'][0]['high_estimate'] + ret['prices'][0]['low_estimate']) / 2,
             'pool_price': (ret['prices'][1]['high_estimate'] + ret['prices'][1]['low_estimate']) / 2,
@@ -38,7 +38,7 @@ class Uber(Dache):
 
     def time(self):
         ret = requests.get(self.config['url_time'], params=self.params, headers=self.config['headers']).json()
-        print 'get time'
+        # print 'get time'
         return {
             'wait_time': (ret['times'][0]['estimate']+ret['times'][1]['estimate'])/2
         }

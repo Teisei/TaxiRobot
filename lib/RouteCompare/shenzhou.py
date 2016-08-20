@@ -40,7 +40,7 @@ class ShenZhou(Dache):
         print self.params
         # print self.config['url_price']
         ret = requests.get(self.config['url_price'], params=self.params).json()
-        print ret
+        # print ret
         return {
             'single_price': ret['content']['prices'][0]['price'],
             'pool_price': -1,
@@ -51,7 +51,7 @@ class ShenZhou(Dache):
 
     def time(self):
         ret = requests.get(self.config['url_time'], params=self.params).json()
-        print ret
+        # print ret
         return {
             'wait_time': int(ret['content']['shortestTimeOfArrival']) * 60
         }
