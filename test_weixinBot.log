@@ -1,0 +1,12 @@
+2016-08-20 18:08:59,551 INFO pid=19316 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:08:59,553 INFO pid=19316 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:08:59,555 INFO pid=19316 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:09:59,008 INFO pid=19316 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:36:11,441 INFO pid=19709 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:36:11,441 INFO pid=19709 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:36:19,759 INFO pid=19709 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:38:09,989 INFO pid=19743 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:38:14,420 INFO pid=19743 tid=MainThread file=myweixin.py:handleMsg:70 | test
+2016-08-20 18:40:37,155 INFO pid=19789 tid=MainThread file=myweixin.py:handleMsg:71 | test 1
+2016-08-20 18:40:42,445 INFO pid=19789 tid=MainThread file=myweixin.py:handleMsg:71 | test 1
+2016-08-20 18:41:19,813 INFO pid=19789 tid=MainThread file=myweixin.py:handleMsg:71 | test 1

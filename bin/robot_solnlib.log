@@ -1,0 +1,51 @@
+2016-08-20 22:16:54,945 DEBUG pid=26654 tid=MainThread file=weixin.py:start:886 | [*] 微信网页版 ... 开动
+2016-08-20 22:16:56,483 DEBUG pid=26654 tid=MainThread file=weixin.py:_run:969 | [*] 正在获取 uuid ... ... 成功
+2016-08-20 22:16:56,483 DEBUG pid=26654 tid=MainThread file=weixin.py:start:891 | [*] 微信网页版 ... 开动
+2016-08-20 22:16:57,508 INFO pid=26654 tid=MainThread file=weixin.py:waitForLogin:173 | https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?tip=1&uuid=wfe3z5Okbg==&_=1471702617
+2016-08-20 22:17:00,477 DEBUG pid=26654 tid=MainThread file=weixin.py:_get:1012 | https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?tip=1&uuid=wfe3z5Okbg==&_=1471702617
+2016-08-20 22:17:00,478 INFO pid=26654 tid=MainThread file=weixin.py:waitForLogin:173 | https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?tip=0&uuid=wfe3z5Okbg==&_=1471702620
+2016-08-20 22:17:01,627 DEBUG pid=26654 tid=MainThread file=weixin.py:_get:1012 | https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?tip=0&uuid=wfe3z5Okbg==&_=1471702620
+2016-08-20 22:17:01,867 DEBUG pid=26654 tid=MainThread file=weixin.py:_get:1012 | https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket=ASTCTlCtRmkHqfY3Pz_Ih3a8@qrticket_0&uuid=wfe3z5Okbg==&lang=zh_CN&scan=1471702610&fun=new
+2016-08-20 22:17:01,868 DEBUG pid=26654 tid=MainThread file=weixin.py:_run:969 | [*] 正在登录 ... ... 成功
+2016-08-20 22:17:02,053 DEBUG pid=26654 tid=MainThread file=weixin.py:_run:969 | [*] 微信初始化 ... ... 成功
+2016-08-20 22:17:02,128 DEBUG pid=26654 tid=MainThread file=weixin.py:_run:969 | [*] 开启状态通知 ... ... 成功
+2016-08-20 22:17:02,434 DEBUG pid=26654 tid=MainThread file=weixin.py:_run:969 | [*] 获取联系人 ... ... 成功
+2016-08-20 22:17:02,476 DEBUG pid=26654 tid=MainThread file=weixin.py:_run:969 | [*] 获取群 ... ... 成功
+2016-08-20 22:17:02,477 DEBUG pid=26654 tid=MainThread file=weixin.py:start:912 | [*] 微信网页版 ... 开动
+2016-08-20 22:17:02,477 DEBUG pid=26654 tid=MainThread file=weixin.py:start:915 | =========================
+[#] Web Weixin
+[#] Debug Mode: False
+[#] Uuid: wfe3z5Okbg==
+[#] Uin: 583339495
+[#] Sid: gq+opSihFljtEQ0C
+[#] Skey: @crypt_df15629f_7976e698d07df94bf711e3233477e51c
+[#] DeviceId: e034151874640386
+[#] PassTicket: xMv1XCBfCYFEnrOe92wVMwWx%2Fb2XLVI%2BLTQkfkjlX0033fz8qDA7E%2Fkg4rK1LWES
+=========================
+2016-08-20 22:17:02,477 DEBUG pid=26654 tid=MainThread file=weixin.py:start:923 | [*] 自动回复模式 ... 关闭
+2016-08-20 22:17:02,481 DEBUG pid=26656 tid=MainThread file=weixin.py:listenMsgMode:792 | [*] 进入消息监听模式 ... 成功
+2016-08-20 22:17:02,521 DEBUG pid=26656 tid=MainThread file=weixin.py:_get:1012 | https://webpush.weixin.qq.com/cgi-bin/mmwebwx-bin/synccheck?synckey=1_641322690%7C2_641322752%7C3_641322390%7C1000_1471687921&skey=%40crypt_df15629f_7976e698d07df94bf711e3233477e51c&uin=583339495&r=1471702622&deviceid=e034151874640386&sid=gq%2BopSihFljtEQ0C&_=1471702622
+2016-08-20 22:17:02,523 DEBUG pid=26656 tid=MainThread file=weixin.py:_run:969 | [*] 进行同步线路测试 ... ... 成功
+2016-08-20 22:17:02,557 DEBUG pid=26656 tid=MainThread file=weixin.py:_get:1012 | https://webpush.weixin.qq.com/cgi-bin/mmwebwx-bin/synccheck?synckey=1_641322690%7C2_641322752%7C3_641322390%7C1000_1471687921&skey=%40crypt_df15629f_7976e698d07df94bf711e3233477e51c&uin=583339495&r=1471702622&deviceid=e034151874640386&sid=gq%2BopSihFljtEQ0C&_=1471702622
+2016-08-20 22:17:02,557 DEBUG pid=26656 tid=MainThread file=weixin.py:listenMsgMode:801 | retcode: 0, selector: 2
+2016-08-20 22:17:11,437 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,437 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,437 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,542 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,542 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,542 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,644 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,644 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:11,644 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:23,280 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:23,280 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:23,280 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:23,280 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:23,280 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:25,245 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:25,245 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:25,245 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:25,245 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:25,245 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:25,245 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-20 22:17:25,245 INFO pid=26656 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
