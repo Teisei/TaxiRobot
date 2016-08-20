@@ -6,6 +6,8 @@ Created by haven on 16/8/20.
 from config import config
 import requests
 
+import utils
+
 
 def requestDidi():
     # login_data = {"username": username, "password": password, "action": 'login', 'ajax': '1', 'ac_id': '4'}
@@ -19,7 +21,6 @@ def requestDidi():
 def get_price(from_lat, from_lon, to_lat, to_lon):
     header = config['didi']['header']
     url = config['didi']['url']
-    didi = config['didi']['params']
     params = {
         'userlat': from_lat,
         'userlng': from_lon,
@@ -27,11 +28,22 @@ def get_price(from_lat, from_lon, to_lat, to_lon):
         'flng': from_lon,
         'tlat': to_lat,
         'tlng': to_lon
+        # 'appTime': utils.getUnixTime()
     }
     # print params
     params = dict(params, **config['didi']['params'])
 
-    ret = requests.get(url, params=params, headers=header)
-    return ret.json()
+    # print url
+    # print params
+    # print header
+    ret = requests.get(url, params=params, headers=header).json()
+    return {
+        'single_price': float(ret['estimateFee_num']),
+        'pool_price': -1,
+        'distance': ret['estimate_fee_data'][0]['distance'],
+        'duration': int(ret['estimate_fee_data'][0]['time_cost']) * 60,
+        'name': 'didi',
+        'wait_time': utils.get_int(ret['arriveTimeTips']) * 60
+    }
 
 # requestDidi()

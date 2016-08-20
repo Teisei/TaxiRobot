@@ -6,22 +6,30 @@ Created by haven on 16/8/20.
 import requests
 from  config import config
 
+import re
 
 def get_price(from_lat, from_lon, to_lat, to_lon):
     yidao = config['yidao']
     # print yidao['headers']
     params = {
-        'startLat': round(from_lat,6),
-        'startLng': round(from_lon,6),
-        'endLat': round(to_lat,6),
-        'endLng': round(to_lon,6)
+        'startLat': round(from_lat, 6),
+        'startLng': round(from_lon, 6),
+        'endLat': round(to_lat, 6),
+        'endLng': round(to_lon, 6)
     }
     # print params
     params = dict(params, **yidao['params'])
     # print params
-    ret = requests.get(yidao['url'], params=params, headers=yidao['headers'])
+    ret = requests.get(yidao['url'], params=params, headers=yidao['headers']).json()
     # print ret
-    return ret.json()
+    print ret
+    return {
+        'single_price': ret['result']['total_fee'],
+        'pool_price': -1,
+        'distance': ret['result'][u'公里费'] / ret['result'][u'公里单价'],
+        'duration': int(re.findall(r"\d+",ret['time_length_detail'])[0])*60,
+        'name': 'yidao'
+    }
 
 
 '''

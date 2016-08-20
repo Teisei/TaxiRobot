@@ -5,7 +5,6 @@ config = {
         'url': "http://api.udache.com/gulfstream/api/v1/passenger/pGetEstimatePriceCoupon",
         'params': {
             "android_id": "2036d0c23a41b53",
-            "appTime": "1471676039174",
             "appversion": "4.4.2",
             "area": "4",
             "bubble_type": "1",
@@ -74,7 +73,7 @@ config = {
     'shenzhou': {
         'url_oauth': 'https://sandboxoauth.10101111.com/oauth/token?client_id=6DF15DDC00000D0A&client_secret=rzixekrhxlhyo1debk49&grant_type=client_credentials',
         'url_price': 'https://sandboxapi.10101111.com/v1/resource/common/estimate/price',
-        'url_nearby': 'https://sandboxapi.10101111.com/v1/resource/common/getNearbyCarInfo',
+        'url_time': 'https://sandboxapi.10101111.com/v1/resource/common/getNearbyCarInfo',
         'params': {
             'serviceId': '14'
         }
@@ -86,10 +85,10 @@ mock_data = {
     "fromName": "%E9%92%A6%E6%B1%9F%E5%9B%AD",
     "toAddress": "%E9%BB%84%E6%B5%A6%E5%8C%BA%E4%B8%AD%E5%B1%B1%E4%B8%9C%E4%B8%80%E8%B7%AF13%E5%8F%B7",
     "toName": "%E5%A4%96%E6%BB%A9",
-    'start_latitude': 31.193824167211297,
-    'start_longitude': 121.33244751040375,
-    'end_latitude': 31.19882056907011,
-    'end_longitude': 121.43771418515428
+    'start_latitude': 31.1717362695384,
+    'start_longitude': 121.43586460004593,
+    'end_latitude': 31.226112878874893,
+    'end_longitude': 121.4274856356389
 }
 # 易道
 # "city":"sh"
