@@ -26,7 +26,7 @@ def getLonLat(addr):
 
     print res.json()
     location =  res.json()['result']['location']
-    return list(map(lambda x: int(x), [location['lng'],location['lat']]))
+    return list(map(lambda x: float(x), [location['lng'],location['lat']]))
 
 
 # getLonLat('上海市闵行区万源路2289弄1-39号')
