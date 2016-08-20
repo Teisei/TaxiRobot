@@ -35,4 +35,4 @@ def get_paths(from_addr, to_addr):
     print ret
     return ret
 
-get_paths('上海市闵行区万源路2289弄1-39号','上海市徐汇区桂平路680号')
+get_paths('上海市徐汇区漕河泾','上海市浦东新区迎宾大道6000号')
