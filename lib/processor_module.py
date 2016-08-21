@@ -69,7 +69,7 @@ def main_process(weixin, name, request):
             deal_anquan(weixin, name, value, context)
         elif command == 'reset':
             deal_reset(weixin, name, value, context)
-        elif commang =='shouye':
+        elif command == 'shouye':
             deal_shouye(weixin, name, value, context)
         else:
             deal_unknown(weixin, name, value, context)
@@ -86,10 +86,11 @@ def main_process(weixin, name, request):
     else:
         deal_dengche(weixin, name, value, context)
 
+
 def deal_shouye(weixin, name, value, context):
-    result=''
-    result='【您好，我是您的出行小助手巴迪，我可以为您提供一条安全实惠的出行路线】' \
-           '您可以输入\n------【打车比价】------\n------【等车休闲】-------\n------【安全小护卫】-------\n我们会为您提供相应服务。【为了您的安全考虑，输入【A+手机号码】 自动设置【紧急联系人】'
+    result = ''
+    result = '【您好，我是您的出行小助手巴迪，我可以为您提供一条安全实惠的出行路线】' \
+             '您可以输入\n------【打车】------\n------【等车】-------\n------【安全】-------\n我们会为您提供相应服务。'
     weixin.sendMsg(name, result)
 
 
@@ -145,7 +146,7 @@ def deal_reset(weixin, name, value, context):
         context.pop('place_b')
     if 'status' in context:
         context.pop('status')
-    result = u'重置成功! 请重新向巴迪分享出发地点】吧:'
+    result = u'重置成功! 请重新向巴迪分享【出发地点】吧:'
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
 
@@ -166,11 +167,9 @@ def get_dache_result_str(a, b, rr, security_message):
         rp_price = item['pool_price']
         rwait_time = item['wait_time']
 
-        res +='-----------------------------------\r\n'
-        res += '|app | price | pool | wait time(分钟)|\r\n'
         res += u'|' + dache_name[str(rname)] + '| ' + str(rs_price) + '元'
-        res += ' | ' + str(rp_price) if rp_price > 0 else ''
-        res += ' | ' + str(rwait_time / 60) + ' \n' if rwait_time > 0 else ''
+        res += ' | ' + (str(rp_price)+'元') if rp_price > 0 else ''
+        res += ' | ' + (str(rwait_time / 60)+'分钟') if rwait_time > 0 else ''
         res += '\r\n'
     result += u'赞!打车路线为:\n从 %s \n到 %s\n 以下是比价结果:\n%s 大概需要%s分钟, %s公里\n 重置请按【0】\n%s。' % (
         a, b, res, rr[2]['duration'] / 60, rr[2]['distance'], security_message)
@@ -192,7 +191,9 @@ def deal_dache(weixin, name, value, context):
             trace = get_direction(a, b)
             name_list = get_similar_names(name, trace)
 
-            print 'number of similar items ' + str(len(name_list))
+            # print 'number of similar items ' + str(len(name_list))
+            if len(name_list) > 0:
+                result += '\n-----------------------------------------------\r\n推荐和他们拼车:\n'
             for e in name_list:
                 name_1 = e[0]
                 score = e[1]
@@ -203,11 +204,13 @@ def deal_dache(weixin, name, value, context):
                 context_1 = kvstore_module.get_Context(name_1)
                 if 'place_a' in context_1 and 'place_b' in context_1:
                     a, b = context_1['place_a'], context_1['place_b']
-                    result += '\nsimilar: %s from 【%s】 to 【%s】, score %s' % (str(name_1), str(a), str(b), str(score))
+                    result += str(name_1) + '\n'
+                    result += 'from 【%s】\n' % str(a)
+                    result += 'to 【%s】\n' % str(b)
         else:
             result += u'巴迪知道了,再拜托您分享下您的[目的地]~\n'
     else:
-        result += u'长得漂亮是本钱,把钱花的漂亮才是本事.巴迪愿为您货比三家,挑选出最实惠的打车方案.请在下方分享您的[当前位置]\n'
+        result += u'长得漂亮是本钱,把钱花的漂亮才是本事.\n巴迪愿为您货比三家,挑选出最实惠的打车方案.\n请在下方分享您的【当前位置】\n'
 
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
@@ -240,6 +243,7 @@ def deal_anquan(weixin, name, value, context):
     weixin.sendMsg(name, result)
     # afterdeal_anquan(weixin, name, value, context)
 
+
 # def afterdeal_anquan(weixin, name, value, context):
 #     result = ''
 #     dt = datetime.now().timestamp()
@@ -253,7 +257,7 @@ def deal_number(weixin, name, value, context):
         result = '【安全】已经为您启动安全守护模式! \n如需解除, 请输入紧急联系人手机号后四位!\n如果在规定时间内您还没有回复巴迪，巴迪可以自动帮你发短信向【紧急联系人】求助哟~ '
     elif len(value) == 4:
         if 'number' in context:
-            if context['number'][-4:]==value:
+            if context['number'][-4:] == value:
                 context.pop('number')
                 result = '【安全】安全守护模式已解除!知道您安全到达,巴迪也就放心了.下次再来找巴迪玩哟~'
         else:
@@ -274,8 +278,6 @@ def deal_order(weixin, name, value, context):
     rduration = rduration / 60
     result = '【安全】订单已为您暂存!\n'
     result += '为您守护 %s 分钟!\n' % str(rduration)
-
-
 
     if not 'number' in context:
         result += '【安全】还未设置紧急联系人! 请输入他的手机号:\n'

@@ -221,7 +221,7 @@ class WebWeixin(object):
         params = {
             'BaseRequest': self.BaseRequest
         }
-        dic = self.f(url, params)
+        dic = self._post(url, params)
         self.SyncKey = dic['SyncKey']
         self.User = dic['User']
         # synckey for synccheck

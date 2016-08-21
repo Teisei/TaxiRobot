@@ -94,14 +94,15 @@ class MyWebWeixin(WebWeixin):
 
         default_name = u'鲍勇翔'
 
+
         # 发送alert给紧急联系人
         for e in self.ContactList:
             name = e['RemarkName']
             context = kvstore_module.get_Context(name)
-            print context
             try:
                 if not context == None:
                     if 'rduration' in context and 'ordertime' in context:
+                        print '############## ************ ##############'
                         seconds = context['rduration']
                         # print context['ordertime']
                         time1 = str_datetime(context['ordertime'])
@@ -110,6 +111,8 @@ class MyWebWeixin(WebWeixin):
                         if current_time >= time2:
                             # alert message
                             self.sendMsg(default_name, name + 'is in danger! Below is her taxi order:\n' + context['order'])
+                            context.pop('ordertime')
+                            kvstore_module.set_Context(name, context)
                         else:
                             # will send alert
                             pass
