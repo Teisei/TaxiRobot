@@ -164,17 +164,11 @@ def get_dache_result_str(a, b, rr, security_message):
         rp_price = item['pool_price']
         rwait_time = item['wait_time']
 
-<<<<<<< HEAD
         res +='-----------------------------------\r\n'
         res += '|app | price | pool | wait time(分钟)|\r\n'
         res += u'|' + dache_name[str(rname)] + '| ' + str(rs_price) + '元'
         res += ' | ' + str(rp_price) if rp_price > 0 else ''
         res += ' | ' + str(rwait_time / 60) + ' \n' if rwait_time > 0 else ''
-=======
-        res += u'| ' + dache_name[str(rname)] + '   |   ' + str(rs_price) + '元'
-        res += '   |   ' + str(rp_price) + '元' if rp_price > 0 else ' | '
-        res += '   |   ' + str(rwait_time / 60) + '分钟' if rwait_time > 0 else ' | '
->>>>>>> 8a384545c668cec5ec72ffe1ce3d56feb54dc1e2
         res += '\r\n'
     result += u'赞!打车路线为:\n从 %s \n到 %s\n 以下是比价结果:\n%s 大概需要%s分钟, %s公里\n 重置请按【0】\n%s。' % (
         a, b, res, rr[2]['duration'] / 60, rr[2]['distance'], security_message)
@@ -233,7 +227,6 @@ def deal_dengche(weixin, name, value, context):
 
 def deal_anquan(weixin, name, value, context):
     result = ''
-<<<<<<< HEAD
     if not 'number' in context:
         result += '为了您的安全考虑,请您设置紧急联系人(在下方输入紧急联系人电话号码就可以了哦~)'
 
@@ -242,12 +235,6 @@ def deal_anquan(weixin, name, value, context):
 
     else:
         result += '安全守护模式已解除!知道您安全到达,巴迪也就放心了.下次再来找巴迪玩哟~'
-=======
-    if not 'dingdan' in context:
-        result += '建议分享您的打车订单, 便于在危险时刻分享给您的紧急联系人。\n如果安全抵达, 输入紧急联系人手机号后四位解除守护!'
-    if not 'number' in context:
-        result += '请输入一个紧急联系人手机号:'
->>>>>>> 8a384545c668cec5ec72ffe1ce3d56feb54dc1e2
     weixin.sendMsg(name, result)
     # afterdeal_anquan(weixin, name, value, context)
 
@@ -264,18 +251,10 @@ def deal_number(weixin, name, value, context):
         result = '【安全】已经为您启动安全守护模式! \n如需解除, 请输入紧急联系人手机号后四位!'
     elif len(value) == 4:
         if 'number' in context:
-<<<<<<< HEAD
             context.pop('number')
         result = '【安全】安全守护模式已解除!知道您安全到达,巴迪也就放心了.下次再来找巴迪玩哟~'
     else:
         result = '【安全】输入11位数字更改紧急联系人手机号!\n如需解除, 请输入紧急联系人手机号后四位!'
-=======
-            if context['number'][-4,-1]==value:
-                context.pop('number')
-                result = '【安全】安全守护模式已解除!'
-        else:
-            result = '【安全】输入11位数字更改紧急联系人手机号!\n如需解除, 请输入紧急联系人手机号后四位!'
->>>>>>> 8a384545c668cec5ec72ffe1ce3d56feb54dc1e2
 
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
