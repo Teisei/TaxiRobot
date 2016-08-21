@@ -1,4 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
 from Trace.trace_helper import *
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 # trace1 = [{
 # 		"lng": 116.33939925532,
@@ -237,3 +242,6 @@ add_trace(name3, trace3)
 result = get_similar_names(name3, trace3)
 for e in result:
     print e
+
+context = get_Context('丁铖')
+print context['place_b']

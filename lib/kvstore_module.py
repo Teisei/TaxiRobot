@@ -2,6 +2,10 @@
 # coding: utf-8
 import os
 from solnlib.modular_input.checkpointer import FileCheckpointer
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 def get_file_checkpointer(dir):
     if not os.path.exists(dir):

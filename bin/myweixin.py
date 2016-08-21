@@ -2,6 +2,7 @@
 # coding: utf-8
 import os
 import sys
+from datetime import datetime
 
 path_prepend = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'lib')
 sys.path.append(path_prepend)
@@ -80,6 +81,8 @@ class MyWebWeixin(WebWeixin):
         reload(kvstore_module)
         reload(processor_module)
 
+        start = datetime.now()
+
         inx = 1
         for msg in r['AddMsgList']:
             try:
@@ -113,6 +116,12 @@ class MyWebWeixin(WebWeixin):
                 traceback.print_exc()
 
             inx = inx + 1
+        # time = now() - start
+        # every name, get context
+        # context['rduration']
+        # > 0 , time : context['rduration'] = context['rduration'] - time, set_context[...]
+        # if context[...] < 0: send message:
+
 
             #
             # if msgType == 1:

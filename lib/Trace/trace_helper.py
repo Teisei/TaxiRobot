@@ -152,5 +152,5 @@ def is_same_way(trace1, trace2):
     pass
 
 v1 = (1,1)
-v2 = (1,1)
+v2 = (-1,-1)
 print cos_dist(v1, v2)

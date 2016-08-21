@@ -7,8 +7,8 @@ from flask import json
 import kvstore_module
 from Trace.trace_helper import get_similar_names
 from paths import *
-
 import sys
+from datetime import datetime
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -67,6 +67,8 @@ def main_process(weixin, name, request):
             deal_anquan(weixin, name, value, context)
         elif command == 'reset':
             deal_reset(weixin, name, value, context)
+        elif commang =='shouye':
+            deal_shouye(weixin, name, value, context)
         else:
             deal_unknown(weixin, name, value, context)
 
@@ -81,6 +83,12 @@ def main_process(weixin, name, request):
 
     else:
         deal_dengche(weixin, name, value, context)
+
+def deal_shouye(weixin, name, value, context):
+    result=''
+    result='【您好，我是您的出行小助手巴迪，我可以为您提供一条安全实惠的出行路线】' \
+           '您可以输入\n------【打车比价】------\n------【等车休闲】-------\n------【安全小护卫】-------\n我们会为您提供相应服务。【为了您的安全考虑，输入【A+手机号码】 自动设置【紧急联系人】'
+    weixin.sendMsg(name, result)
 
 
 def deal_localtion(weixin, name, location, context):
@@ -99,7 +107,7 @@ def deal_localtion(weixin, name, location, context):
         else:
             # a plan is set
             context['place_b'] = location
-            a, b = context['place_a'],context['place_b']
+            a, b = context['place_a'], context['place_b']
             rr = get_paths(a, b)
             result = get_dache_result_str(a, b, rr, security_message)
             rduration = get_rduration(rr)
@@ -110,11 +118,15 @@ def deal_localtion(weixin, name, location, context):
             name_list = get_similar_names(name, trace)
             for e in name_list:
                 name_1 = e[0]
+                score = e[1]
+                if score < 0.1:
+                    break
                 if name_1 == name:
                     continue
                 context_1 = kvstore_module.get_Context(name_1)
-                a, b = context_1['place_a'], context_1['place_b']
-                result += '\nsimilar: %s from 【%s】 to 【%s】' % (str(name_1), str(a), str(b))
+                if 'place_a' in context_1 and 'place_b' in context_1:
+                    a, b = context_1['place_a'], context_1['place_b']
+                    result += '\nsimilar: %s from 【%s】 to 【%s】, score %s' % (str(name_1), str(a), str(b), str(score))
     else:
         # set the start place
         context['place_a'] = location
@@ -122,6 +134,7 @@ def deal_localtion(weixin, name, location, context):
 
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
+
 
 def deal_reset(weixin, name, value, context):
     if 'place_a' in context:
@@ -134,33 +147,46 @@ def deal_reset(weixin, name, value, context):
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
 
+
 def get_dache_result_str(a, b, rr, security_message):
+    rr.sort(key=lambda x: x['single_price'])
     result = ''
     # result += u'赞!打车路线为:\n从 %s 到 %s\n以下是比价结果:\n%s\n重置请按【0】\n%s。' % (a, b, r, security_message)
     res = ''
+    res += '-----------------------------------------------\r\n'
+    res += '| 应用 |  单人  |   拼车  |  等待 |\r\n'
+    res += '-----------------------------------------------\r\n'
     for item in rr:
         rname = item['name']
-        rduration = item['duration']
-        rdistance = item['distance']
+        # rduration = item['duration']
+        # rdistance = item['distance']
         rs_price = item['single_price']
         rp_price = item['pool_price']
         rwait_time = item['wait_time']
 
+<<<<<<< HEAD
         res +='-----------------------------------\r\n'
         res += '|app | price | pool | wait time(分钟)|\r\n'
         res += u'|' + dache_name[str(rname)] + '| ' + str(rs_price) + '元'
         res += ' | ' + str(rp_price) if rp_price > 0 else ''
         res += ' | ' + str(rwait_time / 60) + ' \n' if rwait_time > 0 else ''
+=======
+        res += u'| ' + dache_name[str(rname)] + '   |   ' + str(rs_price) + '元'
+        res += '   |   ' + str(rp_price) + '元' if rp_price > 0 else ' | '
+        res += '   |   ' + str(rwait_time / 60) + '分钟' if rwait_time > 0 else ' | '
+>>>>>>> 8a384545c668cec5ec72ffe1ce3d56feb54dc1e2
         res += '\r\n'
-    result += u'赞!打车路线为:\n从 %s 到 %s\n以下是比价结果:\n%s重置请按【0】\n%s。' % (a, b, res, security_message)
+    result += u'赞!打车路线为:\n从 %s \n到 %s\n 以下是比价结果:\n%s 大概需要%s分钟, %s公里\n 重置请按【0】\n%s。' % (
+        a, b, res, rr[2]['duration'] / 60, rr[2]['distance'], security_message)
     return result
+
 
 def deal_dache(weixin, name, value, context):
     result = ''
     if 'place_a' in context:
         if 'place_b' in context:
             # 成功打车
-            a, b = context['place_a'],context['place_b']
+            a, b = context['place_a'], context['place_b']
             rr = get_paths(a, b)
             result = get_dache_result_str(a, b, rr, security_message)
             rduration = get_rduration(rr)
@@ -169,13 +195,19 @@ def deal_dache(weixin, name, value, context):
             # 计算相似路径
             trace = get_direction(a, b)
             name_list = get_similar_names(name, trace)
+
+            print 'number of similar items ' + str(len(name_list))
             for e in name_list:
                 name_1 = e[0]
+                score = e[1]
+                if score < 0.1:
+                    break
                 if name_1 == name:
                     continue
                 context_1 = kvstore_module.get_Context(name_1)
-                a, b = context_1['place_a'], context_1['place_b']
-                result += '\nsimilar: %s from 【%s】 to 【%s】' % (str(name_1), str(a), str(b))
+                if 'place_a' in context_1 and 'place_b' in context_1:
+                    a, b = context_1['place_a'], context_1['place_b']
+                    result += '\nsimilar: %s from 【%s】 to 【%s】, score %s' % (str(name_1), str(a), str(b), str(score))
         else:
             result += u'巴迪知道了,再拜托您分享下您的[目的地]~\n'
     else:
@@ -184,12 +216,14 @@ def deal_dache(weixin, name, value, context):
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
 
+
 def get_rduration(rr):
     rduration = 0
     for item in rr:
         if item['duration'] > 0:
             rduration = item['duration']
     return rduration
+
 
 def deal_dengche(weixin, name, value, context):
     youxi = kvstore_module.get_youxi()
@@ -199,6 +233,7 @@ def deal_dengche(weixin, name, value, context):
 
 def deal_anquan(weixin, name, value, context):
     result = ''
+<<<<<<< HEAD
     if not 'number' in context:
         result += '为了您的安全考虑,请您设置紧急联系人(在下方输入紧急联系人电话号码就可以了哦~)'
 
@@ -207,8 +242,19 @@ def deal_anquan(weixin, name, value, context):
 
     else:
         result += '安全守护模式已解除!知道您安全到达,巴迪也就放心了.下次再来找巴迪玩哟~'
+=======
+    if not 'dingdan' in context:
+        result += '建议分享您的打车订单, 便于在危险时刻分享给您的紧急联系人。\n如果安全抵达, 输入紧急联系人手机号后四位解除守护!'
+    if not 'number' in context:
+        result += '请输入一个紧急联系人手机号:'
+>>>>>>> 8a384545c668cec5ec72ffe1ce3d56feb54dc1e2
     weixin.sendMsg(name, result)
+    # afterdeal_anquan(weixin, name, value, context)
 
+# def afterdeal_anquan(weixin, name, value, context):
+#     result = ''
+#     dt = datetime.now().timestamp()
+#     result += '【亲爱哒，已经过去s% min时间了，输入您的【保护口令】，取消发送，否则过1分钟后巴迪将会发送短信给您的小伙伴】' %context['rduration']
 
 # 设置紧急联系人, 解除安全守护
 def deal_number(weixin, name, value, context):
@@ -218,10 +264,18 @@ def deal_number(weixin, name, value, context):
         result = '【安全】已经为您启动安全守护模式! \n如需解除, 请输入紧急联系人手机号后四位!'
     elif len(value) == 4:
         if 'number' in context:
+<<<<<<< HEAD
             context.pop('number')
         result = '【安全】安全守护模式已解除!知道您安全到达,巴迪也就放心了.下次再来找巴迪玩哟~'
     else:
         result = '【安全】输入11位数字更改紧急联系人手机号!\n如需解除, 请输入紧急联系人手机号后四位!'
+=======
+            if context['number'][-4,-1]==value:
+                context.pop('number')
+                result = '【安全】安全守护模式已解除!'
+        else:
+            result = '【安全】输入11位数字更改紧急联系人手机号!\n如需解除, 请输入紧急联系人手机号后四位!'
+>>>>>>> 8a384545c668cec5ec72ffe1ce3d56feb54dc1e2
 
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
