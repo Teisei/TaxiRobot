@@ -7,8 +7,8 @@ from flask import json
 import kvstore_module
 from Trace.trace_helper import get_similar_names
 from paths import *
-
 import sys
+from datetime import datetime
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -217,16 +217,17 @@ def deal_dengche(weixin, name, value, context):
 
 def deal_anquan(weixin, name, value, context):
     result = ''
-    if not 'number' in context:
-        result += '请输入一个紧急联系人,和手机号:'
-
     if not 'dingdan' in context:
         result += '建议分享您的打车订单, 便于在危险时刻分享给您的紧急联系人。\n如果安全抵达, 输入紧急联系人手机号后四位解除守护!'
-
-    else:
-        result += '你是安全的了!'
+    if not 'number' in context:
+        result += '请输入一个紧急联系人手机号:'
     weixin.sendMsg(name, result)
+    # afterdeal_anquan(weixin, name, value, context)
 
+# def afterdeal_anquan(weixin, name, value, context):
+#     result = ''
+#     dt = datetime.now().timestamp()
+#     result += '【亲爱哒，已经过去s% min时间了，输入您的【保护口令】，取消发送，否则过1分钟后巴迪将会发送短信给您的小伙伴】' %context['rduration']
 
 # 设置紧急联系人, 解除安全守护
 def deal_number(weixin, name, value, context):
@@ -236,10 +237,11 @@ def deal_number(weixin, name, value, context):
         result = '【安全】已经为您启动安全守护模式! \n如需解除, 请输入紧急联系人手机号后四位!'
     elif len(value) == 4:
         if 'number' in context:
-            context.pop('number')
-        result = '【安全】安全守护模式已解除!'
-    else:
-        result = '【安全】输入11位数字更改紧急联系人手机号!\n如需解除, 请输入紧急联系人手机号后四位!'
+            if context['number'][-4,-1]==value:
+                context.pop('number')
+                result = '【安全】安全守护模式已解除!'
+        else:
+            result = '【安全】输入11位数字更改紧急联系人手机号!\n如需解除, 请输入紧急联系人手机号后四位!'
 
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
