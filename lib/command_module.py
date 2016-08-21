@@ -18,6 +18,7 @@ shouye= r'.*(首页|帮助|help|什么鬼).*'
 commands = {dache: 'dache', dengche: 'dengche', anquan: 'anquan', reset: 'reset',shouye:'shouye'}
 
 def getRequest(content):
+    print content
     # 地址
     reloc = re.match(locations, content)
     if (reloc):
