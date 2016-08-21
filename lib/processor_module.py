@@ -10,6 +10,8 @@ from paths import *
 import sys
 from datetime import datetime
 
+from time_util import datetime_str
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -237,7 +239,7 @@ def deal_number(weixin, name, value, context):
         result = '【安全】已经为您启动安全守护模式! \n如需解除, 请输入紧急联系人手机号后四位!'
     elif len(value) == 4:
         if 'number' in context:
-            if context['number'][-4,-1]==value:
+            if context['number'][-4:]==value:
                 context.pop('number')
                 result = '【安全】安全守护模式已解除!'
         else:
@@ -250,10 +252,21 @@ def deal_number(weixin, name, value, context):
 def deal_order(weixin, name, value, context):
     context['order'] = value
     # context['timeout'] = 2 * 60 * 60
+    # set order generated time
+    current_timestamp = str(datetime.now())
+    context['ordertime'] = str(current_timestamp)
+
+    rduration = context['rduration']
+    rduration = rduration / 60
     result = '【安全】订单已为您暂存!\n'
+    result += '为您守护 %s 分钟!\n' % str(rduration)
+
+
+
     if not 'number' in context:
         result += '【安全】还未设置紧急联系人! 请输入他的手机号:\n'
-    result = '【如需解除守护模式, 请输入紧急联系人手机后四位!'
+    else:
+        result += '【安全】如需解除守护模式, 请输入紧急联系人手机后四位!'
 
     kvstore_module.set_Context(name, context)
     weixin.sendMsg(name, result)
