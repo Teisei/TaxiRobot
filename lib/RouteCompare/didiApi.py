@@ -48,9 +48,15 @@ def get_price(from_lat, from_lon, to_lat, to_lon):
     else:
         distance = -1
 
+    pool_price = -1
+    for fee in ret['estimate_fee_data']:
+        if fee['is_carpool'] == 1:
+            pool_price = fee['estimateFee_num']
+
+    print ret
     return {
         'single_price': float(ret['estimateFee_num']),
-        'pool_price': -1,
+        'pool_price': pool_price,
         'distance': distance,
         'duration': int(time_cost) * 60,
         'name': 'didi',
