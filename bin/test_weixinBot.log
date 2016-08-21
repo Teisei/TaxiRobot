@@ -1584,3 +1584,13 @@
 2016-08-21 11:23:23,098 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:85 | reimport all the modules!
 2016-08-21 11:23:23,100 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:124 | process the 1 the message
 2016-08-21 11:23:23,940 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:85 | reimport all the modules!
+2016-08-21 11:24:54,662 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:85 | reimport all the modules!
+2016-08-21 11:24:54,665 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:124 | process the 1 the message
+2016-08-21 11:24:55,118 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:85 | reimport all the modules!
+2016-08-21 11:25:21,440 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:85 | reimport all the modules!
+2016-08-21 11:25:21,447 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:124 | process the 1 the message
+2016-08-21 11:25:21,913 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:85 | reimport all the modules!
+2016-08-21 11:25:21,916 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:124 | process the 1 the message
+2016-08-21 11:25:54,431 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:85 | reimport all the modules!
+2016-08-21 11:25:54,434 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:124 | process the 1 the message
+2016-08-21 11:25:54,546 INFO pid=44443 tid=MainThread file=myweixin.py:handleMsg:124 | process the 2 the message

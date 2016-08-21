@@ -2,6 +2,7 @@
 # coding: utf-8
 import os
 import sys
+from datetime import datetime
 
 import datetime
 
@@ -87,6 +88,7 @@ class MyWebWeixin(WebWeixin):
         reload(kvstore_module)
         reload(processor_module)
 
+
         # update all contacts
         # check all names if it is expired
 
@@ -116,6 +118,7 @@ class MyWebWeixin(WebWeixin):
             except Exception as e:
                 import traceback
                 traceback.print_exc(e)
+
 
         inx = 1
         for msg in r['AddMsgList']:
@@ -150,6 +153,12 @@ class MyWebWeixin(WebWeixin):
                 traceback.print_exc()
 
             inx = inx + 1
+        # time = now() - start
+        # every name, get context
+        # context['rduration']
+        # > 0 , time : context['rduration'] = context['rduration'] - time, set_context[...]
+        # if context[...] < 0: send message:
+
 
 
 

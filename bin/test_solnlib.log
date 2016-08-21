@@ -8349,3 +8349,14 @@
 2016-08-21 11:22:28,287 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
 2016-08-21 11:22:28,703 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
 2016-08-21 11:23:23,104 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-21 11:24:54,668 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-21 11:25:21,449 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-21 11:25:54,437 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): wx.qq.com
+2016-08-21 11:25:54,548 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:213 | Starting new HTTP connection (1): api.map.baidu.com
+2016-08-21 11:25:54,586 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:213 | Starting new HTTP connection (1): api.map.baidu.com
+2016-08-21 11:25:54,627 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): sandboxoauth.10101111.com
+2016-08-21 11:25:55,231 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): sandboxapi.10101111.com
+2016-08-21 11:25:56,328 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): sandboxapi.10101111.com
+2016-08-21 11:25:56,593 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): api.uber.com.cn
+2016-08-21 11:25:57,686 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:788 | Starting new HTTPS connection (1): api.uber.com.cn
+2016-08-21 11:25:57,982 INFO pid=44443 tid=MainThread file=connectionpool.py:_new_conn:213 | Starting new HTTP connection (1): 3g.yongche.com
