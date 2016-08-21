@@ -3,3 +3,35 @@
 2016-08-20 22:17:11,642 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
 2016-08-20 22:17:23,278 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	reset	0
 2016-08-20 22:17:25,243 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:21:31,063 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	reset	0
+2016-08-20 22:24:24,574 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:24:43,382 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	北京 4
+2016-08-20 22:25:25,608 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:25:46,929 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	上海 4
+2016-08-20 22:29:38,777 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:30:50,631 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:30:50,632 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | Atom丶	command	dengche
+2016-08-20 22:32:11,844 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:32:43,448 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:32:43,584 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:35:30,134 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	reset	0
+2016-08-20 22:35:53,534 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	上海 4
+2016-08-20 22:36:22,213 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:36:38,416 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	北京 4
+2016-08-20 22:37:36,113 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:37:49,321 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	北京 4
+2016-08-20 22:38:56,157 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	command	dache
+2016-08-20 22:39:22,225 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	北京 4
+2016-08-20 22:40:09,287 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	reset	0
+2016-08-20 22:42:50,737 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	北京 4
+2016-08-20 22:43:17,206 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	北京 4
+2016-08-20 22:43:41,547 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	哈哈 4
+2016-08-20 22:44:08,256 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	利民 4
+2016-08-20 22:46:28,361 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	哈哈 4
+2016-08-20 22:47:05,656 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | Atom丶	command	框架
+2016-08-20 22:47:13,066 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | Atom丶	command	dache
+2016-08-20 22:49:07,831 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:40 | 丁铖	location	北京 4
+2016-08-20 22:50:35,753 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:43 | 丁铖	location	别理你 4
+2016-08-20 22:53:17,769 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:43 | 丁铖	location	上海 4
+2016-08-20 22:57:05,780 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:43 | 丁铖	command	哈哈
+2016-08-20 22:57:35,658 INFO pid=26656 tid=MainThread file=processor_module.py:main_process:43 | 丁铖	command	打车

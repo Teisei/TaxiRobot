@@ -3,13 +3,20 @@
 import os
 import sys
 
+import datetime
+
 path_prepend = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'lib')
 sys.path.append(path_prepend)
+from time_util import str_datetime
 import log
 from weixin import *
 import command_module
 import kvstore_module
 import processor_module
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 class MyWebWeixin(WebWeixin):
@@ -80,6 +87,36 @@ class MyWebWeixin(WebWeixin):
         reload(kvstore_module)
         reload(processor_module)
 
+        # update all contacts
+        # check all names if it is expired
+
+        default_name = u'鲍勇翔'
+
+        # 发送alert给紧急联系人
+        for e in self.ContactList:
+            name = e['RemarkName']
+            context = kvstore_module.get_Context(name)
+            print context
+            try:
+                if not context == None:
+                    if 'rduration' in context and 'ordertime' in context:
+                        seconds = context['rduration']
+                        # print context['ordertime']
+                        time1 = str_datetime(context['ordertime'])
+                        time2 = time1 +datetime.timedelta(seconds=seconds)
+                        current_time = datetime.datetime.now()
+                        if current_time >= time2:
+                            # alert message
+                            self.sendMsg(default_name, name + 'is in danger! Below is her taxi order:\n' + context['order'])
+                        else:
+                            # will send alert
+                            pass
+                            # self.sendMsg(default_name, name + 'is in danger! Below is her taxi order:\n' + context['order'])
+
+            except Exception as e:
+                import traceback
+                traceback.print_exc(e)
+
         inx = 1
         for msg in r['AddMsgList']:
             try:
@@ -101,18 +138,20 @@ class MyWebWeixin(WebWeixin):
                 content = msg['Content'].replace('&lt;', '<').replace('&gt;', '>')
                 msgid = msg['MsgId']
 
+                print 'message type: %d' % msgType
                 # view the message from user
                 processor_module.view_message(msg)
-
                 request = command_module.getRequest(content)
-
                 processor_module.main_process(self, name, request)
+
 
             except Exception as e:
                 import traceback
                 traceback.print_exc()
 
             inx = inx + 1
+
+
 
             #
             # if msgType == 1:
