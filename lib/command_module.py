@@ -17,6 +17,7 @@ anquan = r'.*(安全).*'
 commands = {dache: 'dache', dengche: 'dengche', anquan: 'anquan', reset: 'reset'}
 
 def getRequest(content):
+    print content
     # 地址
     reloc = re.match(locations, content)
     if (reloc):

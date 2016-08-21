@@ -109,11 +109,15 @@ def deal_localtion(weixin, name, location, context):
             name_list = get_similar_names(name, trace)
             for e in name_list:
                 name_1 = e[0]
+                score = e[1]
+                if score< 0.1:
+                    break
                 if name_1 == name:
                     continue
                 context_1 = kvstore_module.get_Context(name_1)
-                a, b = context_1['place_a'], context_1['place_b']
-                result += '\nsimilar: %s from 【%s】 to 【%s】' % (str(name_1), str(a), str(b))
+                if 'place_a' in context_1 and 'place_b' in context_1:
+                    a, b = context_1['place_a'], context_1['place_b']
+                    result += '\nsimilar: %s from 【%s】 to 【%s】, score %s' % (str(name_1), str(a), str(b), str(score))
     else:
         # set the start place
         context['place_a'] = location
@@ -166,13 +170,19 @@ def deal_dache(weixin, name, value, context):
             # 计算相似路径
             trace = get_direction(a, b)
             name_list = get_similar_names(name, trace)
+
+            print 'number of similar items ' + str(len(name_list))
             for e in name_list:
                 name_1 = e[0]
+                score = e[1]
+                if score< 0.1:
+                    break
                 if name_1 == name:
                     continue
                 context_1 = kvstore_module.get_Context(name_1)
-                a, b = context_1['place_a'], context_1['place_b']
-                result += '\nsimilar: %s from 【%s】 to 【%s】' % (str(name_1), str(a), str(b))
+                if 'place_a' in context_1 and 'place_b' in context_1:
+                    a, b = context_1['place_a'], context_1['place_b']
+                    result += '\nsimilar: %s from 【%s】 to 【%s】, score %s' % (str(name_1), str(a), str(b), str(score))
         else:
             result += u'亲, 请分享下目的地, 我能帮你挑选最佳打车的app哟!\n'
     else:
