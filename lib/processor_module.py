@@ -242,10 +242,10 @@ def deal_number(weixin, name, value, context):
     result = ''
     if len(value) == 11:
         context['number'] = value
-        result = '【安全】已经为您启动安全守护模式! \n如需解除, 请输入紧急联系人手机号后四位!'
+        result = '【安全】已经为您启动安全守护模式! \n如需解除, 请输入紧急联系人手机号后四位!\n如果在规定时间内您还没有回复巴迪，巴迪可以自动帮你发短信向【紧急联系人】求助哟~ '
     elif len(value) == 4:
         if 'number' in context:
-            if context['number'][-4,-1]==value:
+            if context['number'][-4:]==value:
                 context.pop('number')
                 result = '【安全】安全守护模式已解除!'
         else:
