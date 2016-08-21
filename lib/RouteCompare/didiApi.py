@@ -49,7 +49,7 @@ def get_price(from_lat, from_lon, to_lat, to_lon):
         distance = -1
 
     return {
-        'single_price': float(ret['estimateFee_num'])+4,
+        'single_price': float(ret['estimateFee_num']),
         'pool_price': -1,
         'distance': distance,
         'duration': int(time_cost) * 60,
