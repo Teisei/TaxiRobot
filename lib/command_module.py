@@ -13,8 +13,9 @@ orders = r'.*xml.*\<title\>.*'
 dache = r'.*(打车|dache|da车|打che).*'
 dengche = r'.*(等车|deng车|等che|dengche).*'
 anquan = r'.*(安全).*'
+shouye= r'.*(首页|帮助|help|什么鬼).*'
 
-commands = {dache: 'dache', dengche: 'dengche', anquan: 'anquan', reset: 'reset'}
+commands = {dache: 'dache', dengche: 'dengche', anquan: 'anquan', reset: 'reset',shouye:'shouye'}
 
 def getRequest(content):
     # 地址

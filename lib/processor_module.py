@@ -67,6 +67,8 @@ def main_process(weixin, name, request):
             deal_anquan(weixin, name, value, context)
         elif command == 'reset':
             deal_reset(weixin, name, value, context)
+        elif commang =='shouye':
+            deal_shouye(weixin, name, value, context)
         else:
             deal_unknown(weixin, name, value, context)
 
@@ -81,6 +83,12 @@ def main_process(weixin, name, request):
 
     else:
         deal_dengche(weixin, name, value, context)
+
+def deal_shouye(weixin, name, value, context):
+    result=''
+    result='【您好，我是您的出行小助手巴迪，我可以为您提供一条安全实惠的出行路线】' \
+           '您可以输入\n------【打车比价】------\n------【等车休闲】-------\n------【安全小护卫】-------\n我们会为您提供相应服务。【为了您的安全考虑，输入【A+手机号码】 自动设置【紧急联系人】'
+    weixin.sendMsg(name, result)
 
 
 def deal_localtion(weixin, name, location, context):
