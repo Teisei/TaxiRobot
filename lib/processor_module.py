@@ -254,7 +254,7 @@ def deal_number(weixin, name, value, context):
             if context['number'][-4:]==value:
                 context.pop('number')
                 result = '【安全】安全守护模式已解除!知道您安全到达,巴迪也就放心了.下次再来找巴迪玩哟~'
-         else:
+        else:
             result = '【安全】输入11位数字更改紧急联系人手机号!\n如需解除, 请输入紧急联系人手机号后四位!'
 
     kvstore_module.set_Context(name, context)
