@@ -2296,3 +2296,108 @@
 2016-08-21 11:59:40,645 INFO pid=45965 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
 2016-08-21 11:59:50,112 INFO pid=45965 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
 2016-08-21 11:59:50,115 INFO pid=45965 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:06:16,587 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:06:56,399 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:06:56,401 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:06:56,559 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 2 the message
+2016-08-21 12:06:56,684 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 3 the message
+2016-08-21 12:06:56,788 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 4 the message
+2016-08-21 12:06:58,906 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:06:59,126 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:06:59,128 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:07:18,996 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:07:18,998 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:07:19,116 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 2 the message
+2016-08-21 12:07:19,220 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 3 the message
+2016-08-21 12:07:19,663 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:07:38,412 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:07:38,414 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:07:39,923 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:08:21,659 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:08:21,661 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:08:39,035 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:09:12,886 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:09:12,888 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:09:13,323 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:09:48,818 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:09:48,820 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:09:49,263 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:10:06,170 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:10:06,172 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:10:23,332 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:10:51,014 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:10:51,017 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:10:52,049 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:11:14,454 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:11:14,456 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:11:14,907 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:13:04,720 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:13:04,722 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:13:05,149 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:14:53,547 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:14:53,550 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:14:54,420 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:14:55,867 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:14:55,869 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:14:56,339 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:15:24,682 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:15:24,685 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:15:24,796 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 2 the message
+2016-08-21 12:15:25,419 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:18:02,796 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:18:02,798 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:18:35,215 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:18:35,217 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:18:51,781 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:18:51,783 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:19:43,626 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:19:43,629 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:19:44,079 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:20:15,182 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:20:15,185 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:20:15,308 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 2 the message
+2016-08-21 12:20:17,178 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:20:41,189 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:20:41,192 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:21:01,788 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:31:02,664 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:31:02,667 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:31:11,638 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:31:11,640 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:31:23,646 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:31:23,649 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:33:56,934 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:33:56,936 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:34:26,048 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:34:26,050 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:34:27,186 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:34:27,188 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:34:27,596 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:34:37,936 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:34:37,939 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:34:48,272 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:34:48,275 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:35:11,298 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:35:11,300 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:35:11,487 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:35:11,489 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:35:18,462 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:35:18,464 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:35:44,585 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:35:44,587 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:36:04,323 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:36:04,326 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:36:16,863 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:36:16,866 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:38:38,598 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:38:38,601 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:38:59,589 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:38:59,591 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:39:31,826 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:39:31,829 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:39:49,510 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:39:49,513 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:40:06,792 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:40:06,795 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message
+2016-08-21 12:40:09,779 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:86 | reimport all the modules!
+2016-08-21 12:40:09,782 INFO pid=46361 tid=MainThread file=myweixin.py:handleMsg:130 | process the 1 the message

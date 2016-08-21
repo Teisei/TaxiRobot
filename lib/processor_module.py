@@ -129,7 +129,7 @@ def deal_localtion(weixin, name, location, context):
                 context_1 = kvstore_module.get_Context(name_1)
                 if 'place_a' in context_1 and 'place_b' in context_1:
                     a, b = context_1['place_a'], context_1['place_b']
-                    result += '\nsimilar: %s from 【%s】 to 【%s】, score %s' % (str(name_1), str(a), str(b), str(score))
+                    result += '\nsimilar: %s from 【%s】 to 【%s】' % (str(name_1), str(a), str(b))
     else:
         # set the start place
         context['place_a'] = location
