@@ -16,6 +16,7 @@ sys.setdefaultencoding('utf8')
 path_prepend = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'lib')
 sys.path.append(path_prepend)
 import log
+from str_map import dache_name
 
 log.Logs.set_context(directory='./', namespace='robot')
 logger = log.Logs().get_logger('weixinBot_processor')
@@ -149,11 +150,13 @@ def get_dache_result_str(a, b, rr, security_message):
         rp_price = item['pool_price']
         rwait_time = item['wait_time']
 
-        res += u'' + str(rname) + ' 单价:' + str(rs_price) + '元'
-        res += ', 拼车: ' + str(rp_price) + '元' if rp_price > 0 else ''
-        res += ', 需等待' + str(rwait_time / 60) + 'min \n' if rwait_time > 0 else ''
+        res +='-----------------------------------\r\n'
+        res += '|app | price | pool | wait time(分钟)|\r\n'
+        res += u'|' + dache_name[str(rname)] + '| ' + str(rs_price) + '元'
+        res += ' | ' + str(rp_price) +  if rp_price > 0 else ''
+        res += ' | ' + str(rwait_time / 60) + ' \n' if rwait_time > 0 else ''
         res += '\r\n'
-    result += u'赞!打车路线为:\n从 %s 到 %s\n以下是比价结果:\n%s\n重置请按【0】\n%s。' % (a, b, res, security_message)
+    result += u'赞!打车路线为:\n从 %s 到 %s\n以下是比价结果:\n%s重置请按【0】\n%s。' % (a, b, res, security_message)
     return result
 
 def deal_dache(weixin, name, value, context):
