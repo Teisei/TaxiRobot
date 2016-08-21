@@ -40,13 +40,13 @@ class ShenZhou(Dache):
         print self.params
         # print self.config['url_price']
         ret = requests.get(self.config['url_price'], params=self.params).json()
-        # print ret
+        print ret
         return {
             'single_price': ret['content']['prices'][0]['price'],
             'pool_price': -1,
             'distance': float(ret['content']['distance']) / 1000,
             'duration': int(ret['content']['duration']) * 60,
-            'name':'shenzhou'
+            'name': 'shenzhou'
         }
 
     def time(self):
