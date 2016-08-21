@@ -1,0 +1,12 @@
+{
+  "teisei": {
+    "name":"teisei",
+    "from": "place a",
+    "to": "place b",
+    "predict_time": 90,
+    "contact": "18516216459",
+    "password": 123456,
+    "dingdan_info": {},
+    "topic": ["game", "music"]
+  }
+}

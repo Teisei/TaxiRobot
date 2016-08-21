@@ -37,11 +37,22 @@ def get_price(from_lat, from_lon, to_lat, to_lon):
     # print params
     # print header
     ret = requests.get(url, params=params, headers=header).json()
+
+    estimate_fee_data = ret['estimate_fee_data']
+    if 'time_cost' in estimate_fee_data:
+        time_cost = estimate_fee_data[0]['time_cost']
+    else:
+        time_cost = -1
+    if 'distance' in estimate_fee_data:
+        distance = estimate_fee_data[0]['distance']
+    else:
+        distance = -1
+
     return {
         'single_price': float(ret['estimateFee_num']),
         'pool_price': -1,
-        'distance': ret['estimate_fee_data'][0]['distance'],
-        'duration': int(ret['estimate_fee_data'][0]['time_cost']) * 60,
+        'distance': distance,
+        'duration': int(time_cost) * 60,
         'name': 'didi',
         'wait_time': utils.get_int(ret['arriveTimeTips']) * 60
     }

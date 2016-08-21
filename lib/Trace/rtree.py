@@ -69,7 +69,10 @@ class Rtree(object):
             #否则调用PickNext为leaf1和leaf2分配下一个节点。
             self.PickNext(leaf1, leaf2)
         #当前节点的父节点删除掉当前节点并加入新的两个节点，完成分裂。
-        self.father.leaves.remove(self)
+        try:
+            self.father.leaves.remove(self)
+        except:
+            pass
         self.father.leaves.append(leaf1)
         self.father.leaves.append(leaf2)
         self.father.MBR = merge(self.father.MBR, leaf1.MBR)
